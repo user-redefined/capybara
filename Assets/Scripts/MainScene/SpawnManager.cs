@@ -14,7 +14,10 @@ public class SpawnManager : MonoBehaviour
         for (int i = 0; i < count; i++)
         {
             spawnedPlayer = Instantiate(player, new Vector3(posX, 1, posZ), player.transform.rotation);
-            spawnedPlayer.GetComponent<MeshRenderer>().material.color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
+            if (i < (count / 2))
+                spawnedPlayer.GetComponent<MeshRenderer>().material.color = Color.blue;
+            else
+                spawnedPlayer.GetComponent<MeshRenderer>().material.color = Color.red;
 
             if (posX != 17)
                 posX += 3.4f;
