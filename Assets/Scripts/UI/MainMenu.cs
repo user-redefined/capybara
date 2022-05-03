@@ -7,11 +7,11 @@ public class MainMenu : MonoBehaviour
 {
     #region -Variables-
     [SerializeField] private TMP_InputField inputField;
-    [SerializeField] private TMP_Text errorTextField;
+    [SerializeField] private TMP_Text notificationText;
     private bool isAllowedToStart = false; // needed to know if user inputs int, and so its allowed to change the scene
     #endregion
 
-    #region -InputFieldControll-
+    #region -InputFieldControl-
     public void GetNumberOfEntities()
     {
         int entriesCount;
@@ -21,13 +21,13 @@ public class MainMenu : MonoBehaviour
 #if UNITY_EDITOR
             Debug.LogWarning($"Not an integer entered in {inputField.name}");
 #endif
-            errorTextField.text = "Only digits is allowed";
+            notificationText.text = "Only digits is allowed";
         }
         else
         {
             MainManager.instance.entitiesCount = entriesCount;
             isAllowedToStart = true;
-            errorTextField.text = $"There are {entriesCount} entities in the next scene. Click Start Game!";
+            notificationText.text = $"There are {entriesCount} entities in the next scene. Click Start Game!";
         }
     }
     #endregion
@@ -38,7 +38,7 @@ public class MainMenu : MonoBehaviour
         if (isAllowedToStart)
             SceneManager.LoadScene(1);
         else
-            errorTextField.text = "Enter number of entities first";
+            notificationText.text = "Enter number of entities first";
     }
 
     public void GameQuit()

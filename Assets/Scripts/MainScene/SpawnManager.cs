@@ -1,23 +1,37 @@
 using UnityEngine;
 
+/// <summary>
+/// Entity spawn control class.
+/// </summary>
 public class SpawnManager : MonoBehaviour
 {
-    [SerializeField] private GameObject player;
+    #region -Variables-
+    [SerializeField] private GameObject playerPrefab;
+    #endregion
 
-    void Start()
+    #region -Public Methods-
+    /// <summary>
+    /// Spawn user-defined number of entities in 2 teams.
+    /// </summary>
+    public void SpawnEntities()
     {
         int count = MainManager.instance.entitiesCount;
         float posX = -17, posZ = 17;
 
-        GameObject spawnedPlayer;
+        GameObject spawnedEntity;
+        Entity entity;
 
-        for (int i = 0; i < count; i++)
+        Color color;
+
+        for (int entityID = 0; entityID < count; entityID++)
         {
-            spawnedPlayer = Instantiate(player, new Vector3(posX, 1, posZ), player.transform.rotation);
-            if (i < (count / 2))
-                spawnedPlayer.GetComponent<MeshRenderer>().material.color = Color.blue;
-            else
-                spawnedPlayer.GetComponent<MeshRenderer>().material.color = Color.red;
+            spawnedEntity = Instantiate(playerPrefab, new Vector3(posX, 1, posZ), playerPrefab.transform.rotation);
+            entity = spawnedEntity.GetComponent<Entity>();
+
+            color = (entityID < (count / 2)) ? Color.blue : Color.red;
+            spawnedEntity.GetComponent<MeshRenderer>().material.color = color;
+
+            entity.OnCreate(entityID + 1, color);
 
             if (posX != 17)
                 posX += 3.4f;
@@ -28,4 +42,7 @@ public class SpawnManager : MonoBehaviour
             }
         }
     }
+    #endregion
+
+    void Start() => SpawnEntities();
 }

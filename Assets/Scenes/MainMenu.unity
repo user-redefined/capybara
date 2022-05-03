@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c133c1dd1e68fd47aa04ca8aaf7b4ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entitiesCount: 0
 --- !u!4 &260868229
 Transform:
   m_ObjectHideFlags: 0
@@ -676,7 +677,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputField: {fileID: 1972243793}
-  errorTextField: {fileID: 1520010799}
+  notificationText: {fileID: 1520010799}
 --- !u!1 &1196494196
 GameObject:
   m_ObjectHideFlags: 0
@@ -1189,7 +1190,7 @@ GameObject:
   - component: {fileID: 1520010800}
   - component: {fileID: 1520010799}
   m_Layer: 5
-  m_Name: ErrorMessage
+  m_Name: NotificationMessage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

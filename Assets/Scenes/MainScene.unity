@@ -397,7 +397,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &573710000
 GameObject:
@@ -428,7 +428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f24ee27ada348c24f91b8bf99719ea65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 4859342338326920061, guid: 7d6488c67352b0649be3f52c5debbdcc, type: 3}
+  playerPrefab: {fileID: 5568717779919256480, guid: 7d6488c67352b0649be3f52c5debbdcc, type: 3}
 --- !u!4 &573710002
 Transform:
   m_ObjectHideFlags: 0
@@ -442,7 +442,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &767442635
 GameObject:
